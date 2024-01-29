@@ -1,0 +1,15 @@
+<?php
+
+use Drupal\Core\Breadcrumb\Breadcrumb;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Link;
+
+/**
+ * Implements hook_mail_alter()
+ */
+function dependency_injection_exercise_mail_alter(&$message) {
+  // Take over the MailManager service and ensure all mails are redirected to "nope@doesntexist.com"
+  // I was told to "take over" the service, but this would change the destinaation just as well.
+  $message['to'] = 'nope@doesntexist.com';
+}
+

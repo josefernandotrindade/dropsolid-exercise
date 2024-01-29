@@ -1,0 +1,10 @@
+services:
+  dependency_injection_exercise.image_service:
+    class: Drupal\dependency_injection_exercise\ImageService
+    arguments:
+      - '@http_client'
+
+  dependency_injection_exercise.breadcrumb:
+    class: Drupal\dependency_injection_exercise\Breadcrumb\MyBreadcrumbBuilder
+    tags:
+      - { name: breadcrumb_builder, priority: 100 }
